@@ -10,6 +10,7 @@ from .Adult import AdultDataset
 from .COMPAS import COMPASDataset
 from .imSitu import imSituDataset
 from .ColoredMNIST import MNISTDataset
+from .hiring import hiring
 
 
 if sys.platform == "win32":
@@ -29,6 +30,7 @@ if sys.platform == "win32":
         COMPAS_race= data_dir + r'\compas',
         imSitu = data_dir + r'\imsitu',
         MNIST = data_dir + r'\coloredmnist',
+        hiring = data_dir + r'\hiring'
     )
 else:
     data_dir = r'.\data'
@@ -38,7 +40,8 @@ else:
         Bios_economy= data_dir + '/bios_gender_economy',
         Bios_both= data_dir + '/bios_gender_economy',
         FCL_Bios= data_dir + '/bios_gender_economy',
-    )
+        hiring = data_dir + '/hiring'
+    )   
 
 
 loader_map = {
@@ -53,6 +56,7 @@ loader_map = {
     "compas":COMPASDataset,
     "imsitu":imSituDataset,
     "mnist":MNISTDataset,
+    "hiring":hiring
 }
 
 def name2loader(args):
